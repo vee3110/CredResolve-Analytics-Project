@@ -1,0 +1,18 @@
+table,raw_rows,rows_removed_or_collapsed,golden_rows,note
+borrowers,30600,19585,11015,"600 exact dupes dropped; remaining 19,585 rows collapsed to 1-per-borrower_id (noisy demographic re-writes, not real duplicates)"
+accounts,30000,0,30000,no rows dropped; 455 flagged as orphan (null borrower_id)
+agents,30000,29000,1000,~30 noisy rows per real agent collapsed into 1 resolved profile via MODE/MIN aggregation
+vendor_telephony,15,0,15,"clean, no changes; brand grouping added (5 brands across 15 vendor_ids)"
+campaigns,120,0,120,"clean, no changes; kept at campaign_id grain (5 campaign_names span 24 configs each)"
+calls,91350,1271,90079,"1,271 exact dupes dropped; 79 colliding call_ids kept with surrogate key"
+call_attempts,120000,0,120000,"clean, no changes"
+call_dispositions,35000,0,35000,"clean, no changes; PTP/PROMISE_TO_PAY normalized into one disposition_group"
+whatsapp_events,60600,600,60000,600 exact dupes dropped
+sms_events,45000,0,45000,"clean, no changes"
+field_visits,25000,0,25000,"clean, no changes; unscheduled-visit flag added (250 rows, ~1%)"
+promises_to_pay,18000,0,18000,"clean, no changes"
+payments,25500,486,25014,486 exact dupes dropped; 14 colliding payment_ids kept with surrogate key
+complaints,8000,0,8000,"clean, no changes"
+account_status_history,60000,0,60000,no rows dropped; borrower_id column discarded & re-derived from accounts.csv (100% mismatch found)
+agent_sessions,15000,0,15000,"clean, no changes; timezone normalized to UTC"
+daily_targeting,45000,0,45000,"clean, no changes"

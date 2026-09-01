@@ -1,0 +1,107 @@
+<svg viewBox="0 0 1700 800" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans, sans-serif">
+<rect x="0" y="0" width="1700" height="800" fill="#0F2422"/>
+<text x="48" y="48" font-family="Fraunces, serif" font-size="26" fill="#F2EFE6">Production Analytics Architecture</text>
+<text x="48" y="72" font-size="14" fill="#9FB3AB">Collections recovery analytics &#8212; Raw &#8594; Staging &#8594; Clean &#8594; Golden &#8594; Feature &#8594; Metrics &#8594; Dashboard</text>
+<line x1="48" y1="88" x2="1652" y2="88" stroke="#2B4C46" stroke-width="1"/>
+<rect x="48.0" y="110" width="206.9" height="150" fill="#153330" stroke="#2B4C46" stroke-width="1.5"/>
+<rect x="48.0" y="110" width="206.9" height="30" fill="none" opacity="0.15"/>
+<text x="151.4" y="132" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="600" fill="#F2EFE6" text-anchor="middle">RAW</text>
+<text x="151.42857142857144" y="162" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="middle"><tspan x="151.42857142857144" dy="0">Source system dumps</tspan></text>
+<text x="151.42857142857144" y="192" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="middle"><tspan x="151.42857142857144" dy="0">Append-only, schema-</tspan><tspan x="151.42857142857144" dy="17">on-read</tspan></text>
+<text x="151.42857142857144" y="222" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="middle"><tspan x="151.42857142857144" dy="0">17 tables, hourly</tspan><tspan x="151.42857142857144" dy="17">landing</tspan></text>
+<line x1="254.9" y1="185.0" x2="274.9" y2="185.0" stroke="#E3A542" stroke-width="2"/>
+<polygon points="274.9,180.0 280.9,185.0 274.9,190.0" fill="#E3A542"/>
+<rect x="280.9" y="110" width="206.9" height="150" fill="#153330" stroke="#2B4C46" stroke-width="1.5"/>
+<rect x="280.9" y="110" width="206.9" height="30" fill="none" opacity="0.15"/>
+<text x="384.3" y="132" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="600" fill="#F2EFE6" text-anchor="middle">STAGING</text>
+<text x="384.28571428571433" y="162" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="middle"><tspan x="384.28571428571433" dy="0">Type casts, renames</tspan></text>
+<text x="384.28571428571433" y="192" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="middle"><tspan x="384.28571428571433" dy="0">No business logic yet</tspan></text>
+<text x="384.28571428571433" y="222" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="middle"><tspan x="384.28571428571433" dy="0">1:1 with raw, typed</tspan></text>
+<line x1="487.7" y1="185.0" x2="507.7" y2="185.0" stroke="#E3A542" stroke-width="2"/>
+<polygon points="507.7,180.0 513.7,185.0 507.7,190.0" fill="#E3A542"/>
+<rect x="513.7" y="110" width="206.9" height="150" fill="#153330" stroke="#2B4C46" stroke-width="1.5"/>
+<rect x="513.7" y="110" width="206.9" height="30" fill="none" opacity="0.15"/>
+<text x="617.1" y="132" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="600" fill="#F2EFE6" text-anchor="middle">CLEAN</text>
+<text x="617.1428571428572" y="162" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="middle"><tspan x="617.1428571428572" dy="0">Dedup, entity</tspan><tspan x="617.1428571428572" dy="17">resolution</tspan></text>
+<text x="617.1428571428572" y="192" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="middle"><tspan x="617.1428571428572" dy="0">Timezone normalization</tspan></text>
+<text x="617.1428571428572" y="222" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="middle"><tspan x="617.1428571428572" dy="0">Per-source grain</tspan></text>
+<line x1="720.6" y1="185.0" x2="740.6" y2="185.0" stroke="#E3A542" stroke-width="2"/>
+<polygon points="740.6,180.0 746.6,185.0 740.6,190.0" fill="#E3A542"/>
+<rect x="746.6" y="110" width="206.9" height="150" fill="#153330" stroke="#E3A542" stroke-width="1.5"/>
+<rect x="746.6" y="110" width="206.9" height="30" fill="#E3A542" opacity="0.15"/>
+<text x="850.0" y="132" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="600" fill="#F2EFE6" text-anchor="middle">GOLDEN</text>
+<text x="850.0" y="162" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="middle"><tspan x="850.0" dy="0">Source-of-truth joins</tspan></text>
+<text x="850.0" y="192" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="middle"><tspan x="850.0" dy="0">Attribution rules</tspan><tspan x="850.0" dy="17">applied</tspan></text>
+<text x="850.0" y="222" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="middle"><tspan x="850.0" dy="0">One row per business</tspan><tspan x="850.0" dy="17">entity</tspan></text>
+<line x1="953.4" y1="185.0" x2="973.4" y2="185.0" stroke="#E3A542" stroke-width="2"/>
+<polygon points="973.4,180.0 979.4,185.0 973.4,190.0" fill="#E3A542"/>
+<rect x="979.4" y="110" width="206.9" height="150" fill="#153330" stroke="#2B4C46" stroke-width="1.5"/>
+<rect x="979.4" y="110" width="206.9" height="30" fill="none" opacity="0.15"/>
+<text x="1082.9" y="132" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="600" fill="#F2EFE6" text-anchor="middle">FEATURE</text>
+<text x="1082.857142857143" y="162" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="middle"><tspan x="1082.857142857143" dy="0">Account/agent/campaign</tspan></text>
+<text x="1082.857142857143" y="192" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="middle"><tspan x="1082.857142857143" dy="0">rollups, rolling</tspan><tspan x="1082.857142857143" dy="17">windows</tspan></text>
+<text x="1082.857142857143" y="222" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="middle"><tspan x="1082.857142857143" dy="0">Analysis-ready wide</tspan><tspan x="1082.857142857143" dy="17">tables</tspan></text>
+<line x1="1186.3" y1="185.0" x2="1206.3" y2="185.0" stroke="#E3A542" stroke-width="2"/>
+<polygon points="1206.3,180.0 1212.3,185.0 1206.3,190.0" fill="#E3A542"/>
+<rect x="1212.3" y="110" width="206.9" height="150" fill="#153330" stroke="#E3A542" stroke-width="1.5"/>
+<rect x="1212.3" y="110" width="206.9" height="30" fill="#E3A542" opacity="0.15"/>
+<text x="1315.7" y="132" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="600" fill="#F2EFE6" text-anchor="middle">METRICS</text>
+<text x="1315.7142857142856" y="162" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="middle"><tspan x="1315.7142857142856" dy="0">Contact, RPC, PTP,</tspan></text>
+<text x="1315.7142857142856" y="192" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="middle"><tspan x="1315.7142857142856" dy="0">recovery rate defs</tspan></text>
+<text x="1315.7142857142856" y="222" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="middle"><tspan x="1315.7142857142856" dy="0">(versioned) - 1</tspan><tspan x="1315.7142857142856" dy="17">row/metric/day</tspan></text>
+<line x1="1419.1" y1="185.0" x2="1439.1" y2="185.0" stroke="#E3A542" stroke-width="2"/>
+<polygon points="1439.1,180.0 1445.1,185.0 1439.1,190.0" fill="#E3A542"/>
+<rect x="1445.1" y="110" width="206.9" height="150" fill="#153330" stroke="#2B4C46" stroke-width="1.5"/>
+<rect x="1445.1" y="110" width="206.9" height="30" fill="none" opacity="0.15"/>
+<text x="1548.6" y="132" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="600" fill="#F2EFE6" text-anchor="middle">DASHBOARD</text>
+<text x="1548.5714285714284" y="162" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="middle"><tspan x="1548.5714285714284" dy="0">Executive + ops views</tspan></text>
+<text x="1548.5714285714284" y="192" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="middle"><tspan x="1548.5714285714284" dy="0">Refreshed on schedule</tspan></text>
+<text x="1548.5714285714284" y="222" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="middle"><tspan x="1548.5714285714284" dy="0">Read replica, cached</tspan></text>
+<text x="48" y="280" font-size="11.5" fill="#9FB3AB">Orchestration: Airflow/dbt DAG, one task per stage &#8226; hourly RAW&#8594;GOLDEN, daily GOLDEN&#8594;DASHBOARD &#8226; each edge is a data contract with a schema check gate</text>
+<rect x="48.0" y="314" width="381.5" height="190" fill="#153330" stroke="#2B4C46" stroke-width="1"/>
+<rect x="48.0" y="314" width="6" height="190" fill="#E2604A"/>
+<text x="68.0" y="342" font-family="'IBM Plex Mono', monospace" font-size="12.5" font-weight="600" fill="#E2604A" text-anchor="start"><tspan x="68.0" dy="0">DATA QUALITY CHECKS</tspan></text>
+<text x="68.0" y="370" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="400" fill="#9FB3AB" text-anchor="start"><tspan x="68.0" dy="0">Row-count deltas vs 7-day rolling</tspan><tspan x="68.0" dy="17">median</tspan></text>
+<text x="68.0" y="402" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="400" fill="#9FB3AB" text-anchor="start"><tspan x="68.0" dy="0">PK uniqueness &amp; null-rate</tspan><tspan x="68.0" dy="17">thresholds per contract</tspan></text>
+<text x="68.0" y="434" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="400" fill="#9FB3AB" text-anchor="start"><tspan x="68.0" dy="0">Referential integrity (FK exists</tspan><tspan x="68.0" dy="17">in parent)</tspan></text>
+<text x="68.0" y="466" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="400" fill="#9FB3AB" text-anchor="start"><tspan x="68.0" dy="0">Business-rule checks (e.g. SUCCESS</tspan><tspan x="68.0" dy="17">amount &gt;= 0)</tspan></text>
+<line x1="238.8" y1="314" x2="238.8" y2="298" stroke="#E2604A" stroke-width="1.2" stroke-dasharray="3,3"/>
+<rect x="455.5" y="314" width="381.5" height="190" fill="#153330" stroke="#2B4C46" stroke-width="1"/>
+<rect x="455.5" y="314" width="6" height="190" fill="#E3A542"/>
+<text x="475.5" y="342" font-family="'IBM Plex Mono', monospace" font-size="12.5" font-weight="600" fill="#E3A542" text-anchor="start"><tspan x="475.5" dy="0">LATE DATA &amp; BACKFILL</tspan></text>
+<text x="475.5" y="370" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="400" fill="#9FB3AB" text-anchor="start"><tspan x="475.5" dy="0">3-day reprocessing window on</tspan><tspan x="475.5" dy="17">event_at</tspan></text>
+<text x="475.5" y="402" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="400" fill="#9FB3AB" text-anchor="start"><tspan x="475.5" dy="0">Idempotent upserts keyed on</tspan><tspan x="475.5" dy="17">natural key + surrogate</tspan></text>
+<text x="475.5" y="434" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="400" fill="#9FB3AB" text-anchor="start"><tspan x="475.5" dy="0">Backfill = replay staging-&gt;golden</tspan><tspan x="475.5" dy="17">for a date range</tspan></text>
+<text x="475.5" y="466" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="400" fill="#9FB3AB" text-anchor="start"><tspan x="475.5" dy="0">Late row after window -&gt;</tspan><tspan x="475.5" dy="17">quarantine + weekly sweep</tspan></text>
+<line x1="646.2" y1="314" x2="646.2" y2="298" stroke="#E3A542" stroke-width="1.2" stroke-dasharray="3,3"/>
+<rect x="863.0" y="314" width="381.5" height="190" fill="#153330" stroke="#2B4C46" stroke-width="1"/>
+<rect x="863.0" y="314" width="6" height="190" fill="#74B085"/>
+<text x="883.0" y="342" font-family="'IBM Plex Mono', monospace" font-size="12.5" font-weight="600" fill="#74B085" text-anchor="start"><tspan x="883.0" dy="0">LINEAGE &amp; CATALOG</tspan></text>
+<text x="883.0" y="370" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="400" fill="#9FB3AB" text-anchor="start"><tspan x="883.0" dy="0">Every golden/metric column tagged</tspan><tspan x="883.0" dy="17">with source lineage</tspan></text>
+<text x="883.0" y="402" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="400" fill="#9FB3AB" text-anchor="start"><tspan x="883.0" dy="0">Metric definitions versioned (v1,</tspan><tspan x="883.0" dy="17">v2...) not overwritten</tspan></text>
+<text x="883.0" y="434" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="400" fill="#9FB3AB" text-anchor="start"><tspan x="883.0" dy="0">Data dictionary auto-generated</tspan><tspan x="883.0" dy="17">from dbt schema.yml</tspan></text>
+<text x="883.0" y="466" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="400" fill="#9FB3AB" text-anchor="start"><tspan x="883.0" dy="0">Owner + freshness SLA per table in</tspan><tspan x="883.0" dy="17">catalog</tspan></text>
+<line x1="1053.8" y1="314" x2="1053.8" y2="298" stroke="#74B085" stroke-width="1.2" stroke-dasharray="3,3"/>
+<rect x="1270.5" y="314" width="381.5" height="190" fill="#153330" stroke="#2B4C46" stroke-width="1"/>
+<rect x="1270.5" y="314" width="6" height="190" fill="#8AA6E0"/>
+<text x="1290.5" y="342" font-family="'IBM Plex Mono', monospace" font-size="12.5" font-weight="600" fill="#8AA6E0" text-anchor="start"><tspan x="1290.5" dy="0">MONITORING &amp; ANOMALIES</tspan></text>
+<text x="1290.5" y="370" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="400" fill="#9FB3AB" text-anchor="start"><tspan x="1290.5" dy="0">Daily metric values vs 28-day</tspan><tspan x="1290.5" dy="17">rolling z-score</tspan></text>
+<text x="1290.5" y="402" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="400" fill="#9FB3AB" text-anchor="start"><tspan x="1290.5" dy="0">Alert if any single day/month is</tspan><tspan x="1290.5" dy="17">the sole driver</tspan></text>
+<text x="1290.5" y="434" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="400" fill="#9FB3AB" text-anchor="start"><tspan x="1290.5" dy="0">  of a headline number (cherry-</tspan><tspan x="1290.5" dy="17">pick guard)</tspan></text>
+<text x="1290.5" y="466" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="400" fill="#9FB3AB" text-anchor="start"><tspan x="1290.5" dy="0">Pipeline SLA breach -&gt; page on-</tspan><tspan x="1290.5" dy="17">call within 15 min</tspan></text>
+<line x1="1461.2" y1="314" x2="1461.2" y2="298" stroke="#8AA6E0" stroke-width="1.2" stroke-dasharray="3,3"/>
+<line x1="48" y1="522" x2="1652" y2="522" stroke="#2B4C46" stroke-width="1"/>
+<text x="48" y="544" font-family="Fraunces, serif" font-size="16" fill="#F2EFE6">Example data contract: golden_payments &#8594; metric_recovery_monthly</text>
+<text x="48" y="570" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="#E3A542">Primary key</text>
+<text x="268" y="570" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="start"><tspan x="268" dy="0">payment_sk (surrogate: payment_id + dup_seq)</tspan></text>
+<text x="48" y="594" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="#E3A542">Grain</text>
+<text x="268" y="594" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="start"><tspan x="268" dy="0">one row per payment event, post-dedup</tspan></text>
+<text x="48" y="618" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="#E3A542">Required fields</text>
+<text x="268" y="618" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="start"><tspan x="268" dy="0">account_id, amount, payment_status, event_at (non-null)</tspan></text>
+<text x="48" y="642" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="#E3A542">Freshness SLA</text>
+<text x="268" y="642" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="start"><tspan x="268" dy="0">GOLDEN refreshed within 2h of RAW landing</tspan></text>
+<text x="48" y="666" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="#E3A542">Breaking change rule</text>
+<text x="268" y="666" font-family="'IBM Plex Sans', sans-serif" font-size="11.5" font-weight="400" fill="#9FB3AB" text-anchor="start"><tspan x="268" dy="0">any column rename/type change requires a new contract version, old version kept 90 days</tspan></text>
+<line x1="48" y1="698" x2="1652" y2="698" stroke="#2B4C46" stroke-width="1"/>
+<text x="48" y="720" font-size="11" fill="#9FB3AB">Full data-contract spec, incremental-processing logic, and per-table SLA table are documented in docs/03_production_design.md</text>
+</svg>
